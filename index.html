@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/costom.css" />
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+    <title>Music player</title>
+  </head>
+  <body class="bg-gray-50 flex items-center justify-center h-screen">
+    <div
+      class="flex flex-col space-y-2 w-[350px] md:w-[400px] shadow-lg bg-orange-50 rounded-lg"
+    >
+      <!-- music image -->
+      <div class="relative">
+        <img src="./Images/image-0.jpg" class="rounded-lg" alt="music image" />
+        <!-- dics animation -->
+        <div
+          id="dick"
+          class="bg-opacity-50 absolute w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-yellow-400 bottom-2 left-2"
+        ></div>
+        <div
+          class="absolute bottom-6 left-6 bg-yellow-50 w-4 h-4 rounded-full"
+        ></div>
+      </div>
+
+      <div class="p-4 flex flex-col gap-4">
+        <h4 id="songName" class="capitalize text-xl text-blue-400 text-center">
+          song name
+        </h4>
+        <h5
+          id="artistName"
+          class="uppercase text-center text-lg tracking-widest font-bold text-blue-700"
+        >
+          artist name
+        </h5>
+
+        <audio src="./Musics/song-0.mp3" hidden controls></audio>
+        <!-- audio container -->
+        <div class="flex flex-col space-y-2 items-center justify-center">
+          <!-- progress  -->
+          <div
+            id="progressBar"
+            class="w-full bg-white cursor-pointer h-2 relative rounded-md"
+          >
+            <div
+              id="progress"
+              class="absolute bg-blue-400 h-2 w-[0%] rounded-md"
+            ></div>
+          </div>
+          <!-- counter container -->
+          <div class="flex text-blue-400 w-full items-center justify-between">
+            <span id="currentTime">0:00</span>
+            <!-- buttons -->
+
+            <span id="totalTime">3:40</span>
+          </div>
+          <div class="flex items-center space-x-6 mb-4">
+            <ion-icon
+              id="previous"
+              name="rewind"
+              class="cursor-pointer hover:text-opacity-80 w-8 h-8 text-blue-800 hover:-translate-y-[1px] text-center p-1 rounded-full hover:bg-white"
+            ></ion-icon>
+            <ion-icon
+              id="play"
+              name="play"
+              class="cursor-pointer hover:text-opacity-80 w-8 h-8 text-blue-800 hover:-translate-y-[1px] text-center p-1 rounded-full hover:bg-white"
+            ></ion-icon>
+            <ion-icon
+              id="pause"
+              name="pause"
+              class="hidden cursor-pointer hover:text-opacity-80 w-8 h-8 text-blue-800 hover:-translate-y-[1px] text-center p-1 rounded-full hover:bg-white"
+            ></ion-icon>
+            <ion-icon
+              id="next"
+              name="fastforward"
+              class="cursor-pointer hover:text-opacity-80 w-8 h-8 text-blue-800 hover:-translate-y-[1px] text-center p-1 rounded-full hover:bg-white"
+            ></ion-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- script -->
+    <script src="script.js"></script>
+  </body>
+</html>
