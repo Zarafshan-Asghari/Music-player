@@ -121,11 +121,11 @@ function updateProgressBar(e) {
 }
 
 // progress bar section
-music.addEventListener("timeupdate", updateProgressBar);
-
-// progressBar.addEventListener("click", (e) => {
-//   const width = this.clientWidth();
-//   const click = e.offsetX();
-//   console.log(width, click);
-// });
-// -------------------------------------------------------
+progressBar.addEventListener("click", (e) => {
+  if (play) {
+    const width = progressBar.offsetWidth;
+    const offset = e.offsetX;
+    const duration = music.duration;
+    music.currentTime = (offset / width) * duration;
+  }
+});
